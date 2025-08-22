@@ -1,0 +1,23 @@
+// 1. Importar funciones primero
+@import "bootstrap/scss/functions";
+
+// 2. Sobrescribir variables ANTES de cargar variables y bootstrap
+$primary: #ff5722;   // cambia el azul
+$body-bg: #f9fafbc7;
+$nuevo: #db52db;
+$nuevo-texto: #a1f36a;
+@import "bootstrap/scss/variables";
+
+// 3. Extender el mapa de colores de Bootstrap
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "nuevo": $nuevo,
+    "nuevo-texto": $nuevo-texto
+  )
+);
+
+// 3. Ahora sí importas el resto
+
+@import "bootstrap/scss/mixins";
+@import "bootstrap";
